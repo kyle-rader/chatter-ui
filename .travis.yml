@@ -1,17 +1,19 @@
----
 language: node_js
 node_js:
-  - "6"
-
+- '6'
 sudo: false
 dist: trusty
-
 addons:
   chrome: stable
-
 cache:
   directories:
-    - $HOME/.npm
-
+  - "$HOME/.npm"
 before_install:
-  - npm config set spin false
+- npm config set spin false
+deploy:
+  provider: heroku
+  api_key:
+    secure: jZ2Qn4n8LzbBTavSKq/Jgk+jGBairDwa3YgSiWYO3XfcPWMOBO5F0FCReu5pvRvPbs22qNzfHkhx2ssIp5A1ccphftKdnsuBOFV8WeIdS4Q0h5/7jL8N64KZX3AYMB+sh6f5U2WlN+Z2W2PoU9GH4oRKwQvYR1v04LoSirOwMfjue0T6KzJZBYl14L/J511SxYjxniUz1yhiUgVITcdIgnWPgbanXgGjp6FZD3P0kKPJHI/HqZaQLtkAdEicpcjbkKu5XyH8WIycb8iBcTk3+bjSQ9MjbNKfGIoaqhoS4g2NO+XFmodxUgkY9Qm/8zv/4rL/oXPMGajDBHvTbjMLj3CdgTaEtYieMLCVzs32Ywji0syb8WJ63RdojpRv53HxlAYiURX84gQc4pY1zik1yKrGxE87TpGU/Fbag5BlxVTr9d+HqakaMOfaQj9ZEUs6woeVZIMvIPcYlWljD1rpbhRVplzz5GQL4ns3GIGKiz+sUdaVLJ6Vg8lLE4c1nBnAP7CIJtDQczsFCowK0RfSWc7sHAhbr6zqddeXGHlaKbxKkjJQmauegw3g5TvCacAfj+D5p8hGI7/PAT1EB0rdwXSUhorpaTEzSO4xIjGRVqUVUs8KRl6tnxDMJmSlFLsUP3frhzyMx9iCU8H9CkFvRRYyBmTH2+XsecSO0VZHssw=
+  app: kr-chatter-ui
+  on:
+    repo: kyle-rader/chatter-ui
